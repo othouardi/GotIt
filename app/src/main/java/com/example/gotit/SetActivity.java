@@ -64,6 +64,7 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
         }
     }
 
+    //show the message error
     public void showDialog(){
         AlertDialog alertDialog = new AlertDialog.Builder(SetActivity.this).create();
         alertDialog.setTitle("Missing field");
@@ -79,4 +80,5 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
                 });
         alertDialog.show();
     }
+
 }
