@@ -20,11 +20,13 @@ have either 'true' or 'false' saved in the preferences, When the app is launched
 public class MainActivity extends AppCompatActivity {
     Boolean isactive;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-     isactive =   preferences.getBoolean("active ",false);
+        //validation
+        isactive =   preferences.getBoolean("active ",false);
         if(isactive){
           Intent intent = new Intent(this, ViewActivity.class);
             startActivity(intent);
