@@ -65,5 +65,14 @@ public class Methods {
             return 0;
         }
     }
+    
+    public static void sendAutoResponse(Context c, String phone){
+        SmsManager smsManager = SmsManager.getDefault();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(c);
 
+
+        String message = preferences.getString("outgoingMessage", "No message");
+
+        smsManager.sendTextMessage(phone, null, message, null, null);
+    }
 }
